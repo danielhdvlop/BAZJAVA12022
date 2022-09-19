@@ -26,14 +26,14 @@ Aquí encontrarás todas las grabaciones y presentaciones una vez finalizada cad
 - 📺 [Grabacion Viernes 9 Sep](https://drive.google.com/file/d/1lH2K-t-ufJF1BHgiRCZhAwcE-YBABcNI/view?usp=sharing)
 
 # Semana 3
-- [Lunes 12 Sep/Java I]
-- 📺 [Grabacion Lunes 12 Sep]
-- [Martes 13 Sep/Java II]
-- 📺 [Grabacion Martes 13 Sep]
-- [Miércoles 14 Sep/Java III]
-- 📺 [Miércoles 14 Sep]
-- [Jueves 15 Sep/Java IV]
-- 📺 [Grabacion Jueves 15 Sep]
+- [Lunes 12 Sep/Java I](https://drive.google.com/file/d/11SlfwloDlvcFRLEwzsIauSkz8gUqipk1/view?usp=sharing)
+- 📺 [Grabacion Lunes 12 Sep](https://drive.google.com/file/d/1qTAfLVtMNNUUtxaEM7BsR3ZE81RwiSfu/view?usp=sharing)
+- [Martes 13 Sep/Java II](https://drive.google.com/file/d/1IOwSI4Rd4WKGBuPWY9Vwqt_wZUwvIJJL/view?usp=sharing)
+- 📺 [Grabacion Martes 13 Sep](https://drive.google.com/file/d/1yi0rSdZOUzKczLKhUaO2q3UVISNNYO79/view?usp=sharing)
+- [Miércoles 14 Sep/Java III](https://drive.google.com/file/d/1AF4P6Lt-Nz2MCn51iE9i0C2WWpwtDCIa/view?usp=sharing)
+- 📺 [Miércoles 14 Sep](https://drive.google.com/file/d/1poTpD6wSberqYySWREbv0Pf4AVw5Pcum/view?usp=sharing)
+- [Jueves 15 Sep/Java IV](https://drive.google.com/file/d/1t76rDsiiRjKvib1hzYxi2UMDdzZa3rfB/view?usp=sharing)
+- 📺 [Grabacion Jueves 15 Sep](https://drive.google.com/file/d/1nqfQvmoGXr_OSTbS06UsQmrPLDa0ssgv/view?usp=sharing)
 
 
 # Semana 4

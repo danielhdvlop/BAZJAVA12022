@@ -55,7 +55,8 @@ Los temas estan divididos en 6 semanas, 3 sesiones por semana.
    2. [Programación Concurrente](4/Concurrencia/README.md)
    3. [Excepciones](4/Excepciones/README.md)
    4. [Anotaciones](4/Anotaciones/README.md)
-   5. [Beans](4/Beans/README.md)
+   5. [Programación Funcional](4/Funcional/README.md)
+   6. [Patrones de Diseño](4/PatronesDiseno/README.md)
 
 ### Semana 5 - Spring Boot
    1. [Configuracion Inicial](5/Configuracion/README.md)
@@ -87,12 +88,13 @@ Selecciona la liga de abajo de cualquiera de los mentores, te abrira su calendar
 
 - [Neftali Ramos](https://calendly.com/neftali-ramos/mentoria-baz) (GIT, Microservicios, RestAPIs, Serverless, MongoDB)
 - [Francisco Mojica](https://calendly.com/paco-mojica/mentoria-baz) (GIT, Microservicios, RestAPIs, Serverless)
-- [Marco Robles](https://calendly.com/marco-robles-wize) (Kafka, MongoDB, Codigo Limpio)
-- [Mario Cruz](https://calendly.com/mario-cruz-wizeline) (Kafka)
-- [Diana Fernandez](https://calendly.com/dianafernandez-wizeline/mentoria-baz) (MongoDB, Codigo Limpio)
-- [Victor Lozano](https://calendly.com/hugo-wizeline/mentoria-baz) (Codigo Limpio)
+- [Marco Robles](https://calendly.com/marco-robles-wize) (Kafka, MongoDB, Código Limpio)
+- [Mario Cruz](https://calendly.com/mario-cruz-wizeline) (GIT, Microservicios, RestAPIs, Kafka)
+- [Diana Fernandez](https://calendly.com/dianafernandez-wizeline/mentoria-baz) (MongoDB, Código Limpio)
+- [Victor Lozano](https://calendly.com/hugo-wizeline/mentoria-baz) (Código Limpio)
 - [Gerardo Ruiz](https://calendly.com/gerardoruiz-wizeline/mentoria-baz) (Java, Spring Boot, JUnit)
 - [Jose Perea](https://calendly.com/jose-vazquez-wizeline) (Java, Spring Boot, JUnit)
+- [David Guerra](https://calendly.com/david-guerrab/mentoria-baz) (Java, RestAPIs, Código Limpio) 
 
 # VI. PROYECTO BAZ SUPERAPP / BANCA DIGITAL (Asignado por Líder de Gremio)
 
