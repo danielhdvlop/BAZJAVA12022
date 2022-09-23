@@ -37,13 +37,13 @@ Aquí encontrarás todas las grabaciones y presentaciones una vez finalizada cad
 
 
 # Semana 4
-- [Lunes 19 Sep/Java VI]
-- 📺 [Lunes 19 Sep]
-- [Martes 20 Sep/Java VII]
+- [Lunes 19 Sep/Java VI](https://drive.google.com/file/d/1t3_gZphbF_Q0ey_wzJteAso_SBA0BgM0/view?usp=sharing)
+- 📺 [Lunes 19 Sep](https://drive.google.com/file/d/1Zovq1OVWmLrMwKU7RMa1JVvz7cTgz_8g/view?usp=sharing)
+- [Martes 20 Sep/Java VII](https://drive.google.com/file/d/1dCG-dtgnpMLE6dqOVQzZFzjj1zMj0z09/view?usp=sharing)
 - 📺 [Grabacion Martes 20 Sep]
-- [Miércoles 21 Sep/Java VIII]
+- [Miércoles 21 Sep/Java VIII](https://drive.google.com/file/d/1ZzU6p-VI0PfHyBACaldkqd3zmrbLK4Un/view?usp=sharing)
 - 📺 [Miércoles 21 Sep]
-- [Jueves 22 Sep/Java IX]
+- [Jueves 22 Sep/Java IX](https://drive.google.com/file/d/1YUK2ywFjnYR24BYMKlajvPteyKBAFjTc/view?usp=sharing)
 - 📺 [Grabacion Jueves 22 Sep]
 - [Viernes 23 Sep/Java X]
 - 📺 [Viernes 23 Sep]
