@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "e4d325cb-8eff-4305-b57b-6d059818ebc6",
+		"name": "DROGON",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17260937"
+	},
+	"item": [
+		{
+			"name": "Petición Drogon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{'sicu':'sadlkjasbndasl', 'Gaveta':'SUPERAPP', 'DescProd':'SUPA', 'NumContrato':'3', 'LlaveProd':'PEDRO_PEREZ_PEREIRATEST000 ', 'Origen':'AppMovil', 'StatusDoc':'0', 'Documentos':'1,2', 'NombreCte':{ 'texto':'Pepe Pecas ' }, 'APaternoCte':{ 'texto':'Perez ' }, 'AMaternoCte':{ 'texto':'Pereira ' }, 'FirmaTerminos':{ 'texto':'DOCUMENTOFIRMADOELECTRONICAMENTE' }, 'FirmaAvisoP':{ 'texto':'DOCUMENTOFIRMADOELECTRONICAMENTE' }, 'FechaTerminos':{ 'texto':'25deNoviembrede2021' }, 'FechaAviso':{ 'texto':'25deNoviembrede2021'}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/drogon/v2/service/docs",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"drogon",
+						"v2",
+						"service",
+						"docs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
