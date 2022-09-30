@@ -3,8 +3,12 @@ import com.wizeline.BO.BankAccountBO;
 import com.wizeline.BO.BankAccountBOImpl;
 import com.wizeline.BO.UserBO;
 import com.wizeline.BO.UserBOImpl;
+import com.wizeline.DAO.Plane1;
+import com.wizeline.DAO.Plane2;
+import com.wizeline.DAO.ProtoypeImplementation;
 import com.wizeline.DTO.BankAccountDTO;
 import com.wizeline.DTO.ResponseDTO;
+import com.wizeline.DTO.Sumas;
 import com.wizeline.DTO.UserDTO;
 import com.wizeline.Utils;
 import org.json.JSONArray;
@@ -64,7 +68,7 @@ public class LearningJava extends Thread {
         return bankAccountBO.getAccountDetails(user, lastUsage);
     }
 
-    public static void main(String[] args) throws IOException{
+    public static <array> void main(String[] args) throws IOException{
         LOGGER.info("Learning JAVA - Iniciando Servicio REST");
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
@@ -251,6 +255,45 @@ public class LearningJava extends Thread {
             exchange.close();
         }));
 
+        server.createContext("/api/multiplicar", (exchange -> {
+            String msgProcPeticion = "Obteniendo Accounts by Type";
+            LOGGER.info(msgProcPeticion);
+            Instant inicioDeEjecucion = Instant.now();
+            BankAccountBO bankAccountBO = new BankAccountBOImpl();
+            String responseText = "";
+            if ("GET".equals(exchange.getRequestMethod())) {
+                LOGGER.info("LearningJava - Procesando peticion HTTP de tipo GET");
+                Sumas data = new Sumas();
+                int TotalSuma = 0;
+                int valor = data.getDato3();
+                if(valor > 0){
+                    Plane1 avion1 = new Plane1();
+                    avion1.createPlane();
+                    TotalSuma = ProtoypeImplementation.suma(data.getDato1(),data.getDato2());
+                    avion1.notifyUser();
+                } else {
+                    Plane2 avion2 = new Plane2();
+                    avion2.createPlane();
+                    TotalSuma = ProtoypeImplementation.suma(data.getDato1(),data.getDato2(),data.getDato3());
+                    avion2.notifyUser();
+                }
+                JSONObject json = new JSONObject(TotalSuma);
+                responseText = json.toString();
+                exchange.getResponseHeaders().add("Content-type", "application/json");
+                exchange.sendResponseHeaders(200, responseText.getBytes().length);
+            } else
+                exchange.sendResponseHeaders(405, -1);
+
+            OutputStream output = exchange.getResponseBody();
+            Instant finalDeEjecucion = Instant.now();
+            LOGGER.info("LearningJava - Cerrando recursos");
+            String total = new String(String.valueOf(Duration.between(inicioDeEjecucion, finalDeEjecucion).toMillis()).concat(" segundos."));
+            LOGGER.info("Tiempo de respuesta: ".concat(total));
+            output.write(responseText.getBytes());
+            output.flush();
+            output.close();
+            exchange.close();
+        }));
 
         server.setExecutor(null);
         server.start();
@@ -294,26 +337,27 @@ public class LearningJava extends Thread {
             throw new RuntimeException(e);
         }
     }
-//
-//    private void crearUsuarios() {
-//        try {
-//            String user = "user";
-//            String pass = "password";
-//            JSONArray jsonArray = new JSONArray(textThread);
-//            JSONObject userJson;
-//
-//            ResponseDTO response = null;
-//
-//            LOGGER.info("jsonArray.length(): " + jsonArray.length());
-//            for(int i = 0; i < jsonArray.length(); i++) {
-//                userJson = new JSONObject(jsonArray.get(i).toString());
-//                response = createUser(userJson.getString(user), userJson.getString(pass));
-//                responseTextThread = new JSONObject(response).toString();
-//                LOGGER.info("Usuario " + (i+1) + ": " + responseTextThread);
-//                Thread.sleep(1000);
-//            }
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
+
+    private void crearUsuarios() {
+        try {
+            String user = "user";
+            String pass = "password";
+            JSONArray jsonArray = new JSONArray(textThread);
+            JSONObject userJson;
+
+            ResponseDTO response = null;
+
+            LOGGER.info("jsonArray.length(): " + jsonArray.length());
+            for(int i = 0; i < jsonArray.length(); i++) {
+                userJson = new JSONObject(jsonArray.get(i).toString());
+                response = createUser(userJson.getString(user), userJson.getString(pass));
+                responseTextThread = new JSONObject(response).toString();
+                LOGGER.info("Usuario " + (i+1) + ": " + responseTextThread);
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
