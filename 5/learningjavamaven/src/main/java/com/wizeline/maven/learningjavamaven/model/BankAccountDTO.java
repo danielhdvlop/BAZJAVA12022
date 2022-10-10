@@ -1,8 +1,12 @@
-package com.wizeline.DTO;
+package com.wizeline.maven.learningjavamaven.model;
+
+import com.wizeline.maven.learningjavamaven.enums.AccountType;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.Map;
 
+@Document("bankAccountCollection")
 public class BankAccountDTO {
 
     private long accountNumber;

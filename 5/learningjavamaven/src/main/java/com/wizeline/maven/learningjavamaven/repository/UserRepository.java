@@ -1,4 +1,7 @@
 package com.wizeline.maven.learningjavamaven.repository;
 
-public class UserRepository {
+public interface UserRepository {
+    String CreateUser(String user, String password);
+    String login(String user, String password);
 }
+

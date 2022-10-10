@@ -1,4 +1,4 @@
-package com.wizeline.DTO;
+package com.wizeline.maven.learningjavamaven.model;
 
 public class ResponseDTO {
     private String status;

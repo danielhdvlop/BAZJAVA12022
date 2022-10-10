@@ -1,4 +1,4 @@
-package com.wizeline.DTO;
+package com.wizeline.maven.learningjavamaven.model;
 
 public class ErrorDTO {
     private String errorCode;

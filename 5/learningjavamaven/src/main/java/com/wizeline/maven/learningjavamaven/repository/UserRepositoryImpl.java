@@ -1,9 +1,11 @@
 package com.wizeline.maven.learningjavamaven.repository;
 
 
+import org.springframework.stereotype.Repository;
+
 import java.io.*;
         import java.util.logging.Logger;
-
+@Repository
 public class UserRepositoryImpl implements UserRepository{
 
     private static final Logger LOGGER = Logger.getLogger(UserRepositoryImpl.class.getName());
