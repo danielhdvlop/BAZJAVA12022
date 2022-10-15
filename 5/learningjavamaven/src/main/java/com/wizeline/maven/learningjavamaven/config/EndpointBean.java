@@ -13,6 +13,8 @@ public class EndpointBean {
     @NotNull
     private String createUser;
     @NotNull
+    private String updateUser;
+    @NotNull
     private String createUsers;
     @NotNull
     private String userAccount;
@@ -29,8 +31,14 @@ public class EndpointBean {
     public String getCreateUser() {
         return createUser;
     }
+    public String getUpdateUser() {
+        return updateUser;
+    }
     public void setCreateUser(String createUser) {
         this.createUser = createUser;
+    }
+    public void setUpdateUser(String updateUser) {
+        this.updateUser = updateUser;
     }
     public String getCreateUsers() {
         return createUsers;

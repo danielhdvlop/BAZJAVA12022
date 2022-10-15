@@ -9,7 +9,6 @@ import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -93,26 +92,4 @@ public class UserControllerTEST {
         assertEquals("fail", codigoResp, "No se pudeo crear el usuario");
     }
 
-    @Test
-    @DisplayName("Prueba Crear Usuarios")
-    public void pruebaCrearUsuarios() {
-        LOGGER.info("Iniciando Crear Ususarios");
-        List<UserDTO> listDto = new ArrayList<>();
-        userDTO.setUser("Daniel");
-        userDTO.setPassword("1234");
-        listDto.add(userDTO);
-        userDTO.setUser("Humberto");
-        userDTO.setPassword("5678");
-        listDto.add(userDTO);
-        userDTO.setUser("Vargas");
-        userDTO.setPassword("9101");
-        listDto.add(userDTO);
-        userDTO.setUser("Lopez");
-        userDTO.setPassword("1121");
-        listDto.add(userDTO);
-        listDto.add(userDTO);
-        responseList = userController.createUsers(listDto);
-        LOGGER.info("Respuesta: " + response.getStatusCodeValue());
-        assertEquals(200, responseList.getStatusCodeValue());
-    }
 }

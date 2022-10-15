@@ -9,4 +9,6 @@ public interface BankAccountService {
     List<BankAccountDTO> getAccounts();
     void deleteAccounts();
     List<BankAccountDTO> getAccountByUser(String user);
+
+    List<BankAccountDTO> updateAccountByUser(String user);
 }

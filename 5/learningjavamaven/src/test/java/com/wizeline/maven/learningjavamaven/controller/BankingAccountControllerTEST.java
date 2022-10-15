@@ -1,8 +1,10 @@
 package com.wizeline.maven.learningjavamaven.controller;
 
+import com.jayway.jsonpath.Criteria;
+import com.mongodb.client.result.DeleteResult;
+import com.mongodb.client.result.UpdateResult;
 import com.wizeline.maven.learningjavamaven.enums.AccountType;
 import com.wizeline.maven.learningjavamaven.model.BankAccountDTO;
-import com.wizeline.maven.learningjavamaven.model.Post;
 import com.wizeline.maven.learningjavamaven.model.ResponseDTO;
 import com.wizeline.maven.learningjavamaven.service.BankAccountService;
 import com.wizeline.maven.learningjavamaven.service.UserService;
@@ -13,8 +15,13 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.CriteriaDefinition;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.http.ResponseEntity;
 
+import javax.xml.stream.events.Comment;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -42,7 +49,7 @@ public class BankingAccountControllerTEST {
     ResponseEntity responseEntity;
 
     @Mock
-    ResponseEntity<Post> responseByType;
+    ResponseEntity<String> responseByType;
 
     @Mock
     ResponseEntity<List<BankAccountDTO>> responseList;
@@ -55,6 +62,12 @@ public class BankingAccountControllerTEST {
 
     @Autowired
     UserService userService;
+
+    private MongoTemplate mongoTemplate;
+
+    public BankingAccountControllerTEST(MongoTemplate mongoTemplate) {
+        this.mongoTemplate = mongoTemplate;
+    }
 
     @BeforeEach
     void antesPruebas() {
@@ -97,10 +110,67 @@ public class BankingAccountControllerTEST {
 
     @Test
     @DisplayName("Prueba servicio getExternalUser")
-    public void pruebaGetAccountsByType() {
+    public void getExternalUser() {
         LOGGER.info("LearningJava - iniciando prueba getExternalUser");
         responseByType = bankingAccountController.getExternalUser(Long.valueOf(user));
         assertEquals(200, responseByType.getStatusCodeValue());
+        LOGGER.info("Se obtiene el codigo de respuesta: " + responseByType.getStatusCodeValue());
+    }
+
+    @Test
+    @DisplayName("Prueba de deleteAccounts")
+    public void deleteAccounts() {
+        LOGGER.info("LearningJava - iniciando prueba getExternalUser");
+        responseByType = bankingAccountController.deleteAccounts();
+        assertEquals(200, responseByType.getStatusCodeValue());
+        LOGGER.info("Se obtiene el codigo de respuesta: " + responseByType.getStatusCodeValue());
+    }
+
+    @Test
+    @DisplayName("Prueba de MongoBD SelectbyUserName")
+    public void selectuseName() {
+        LOGGER.info("LearningJava - iniciando prueba MongoBD (SELECT)");
+        Query query = new Query();
+        query.addCriteria((CriteriaDefinition) Criteria.where("userName").is(user));
+        LOGGER.info("Procesando prueba MongoBD (SELECT)");
+        responseByType = (ResponseEntity<String>) mongoTemplate.find(query, BankAccountDTO.class);
+        assertEquals(200, responseByType.getStatusCodeValue());
+        LOGGER.info("Se obtiene el codigo de respuesta: " + responseByType.getStatusCodeValue());
+    }
+
+    @Test
+    @DisplayName("Prueba de MongoBD SelectAll")
+    public void selectAll() {
+        LOGGER.info("LearningJava - iniciando prueba MongoBD (SELECT)");
+        Query query = new Query();
+        query.addCriteria((CriteriaDefinition) Criteria.where("1").is(1));
+        LOGGER.info("Procesando prueba MongoBD (SELECT)");
+        responseByType = (ResponseEntity<String>) mongoTemplate.find(query, BankAccountDTO.class);
+        assertEquals(200, responseByType.getStatusCodeValue());
+        LOGGER.info("Se obtiene el codigo de respuesta: " + responseByType.getStatusCodeValue());
+    }
+
+    @Test
+    @DisplayName("Prueba de MongoBD DELETE")
+    public void deleteAccounts2() {
+        DeleteResult deleteReponse;
+        LOGGER.info("LearningJava - iniciando prueba MongoBD (DELETE)");
+        Query query = new Query();
+        query.addCriteria((CriteriaDefinition) Criteria.where("1").is(1));
+        LOGGER.info("LProcesando prueba MongoBD (SELECT)");
+        deleteReponse = mongoTemplate.remove(new Query(), "users");
+        assertEquals(200, deleteReponse.getDeletedCount());
+        LOGGER.info("Se obtiene el codigo de respuesta: " + responseByType.getStatusCodeValue());
+    }
+    @Test
+    @DisplayName("Prueba de MongoBD UPDATE")
+    public void update() {
+        LOGGER.info("LearningJava - iniciando prueba MongoBD (UPDATE)");
+        Query query = new Query();
+        query.addCriteria((CriteriaDefinition) Criteria.where("userName").is(user));
+        LOGGER.info("Procesando prueba MongoBD (UPDATE)");
+        UpdateResult updateResponse = mongoTemplate.updateFirst(query, Update.update("message", "This comment updated by updateFirst methods"), Comment.class);
+        assertEquals(200, updateResponse.getModifiedCount());
         LOGGER.info("Se obtiene el codigo de respuesta: " + responseByType.getStatusCodeValue());
     }
 }

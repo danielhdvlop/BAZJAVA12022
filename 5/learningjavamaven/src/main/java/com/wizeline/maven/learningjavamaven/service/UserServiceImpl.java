@@ -35,7 +35,6 @@ public class UserServiceImpl implements UserService{
         return response;
     }
 
-    @Override
     public ResponseDTO login(String user, String password) {
         LOGGER.info("Inicia procesamiento en capa de negocio");
         ResponseDTO response = new ResponseDTO();

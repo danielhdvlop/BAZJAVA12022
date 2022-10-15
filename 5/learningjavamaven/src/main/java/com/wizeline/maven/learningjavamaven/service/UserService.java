@@ -5,5 +5,8 @@ import com.wizeline.maven.learningjavamaven.model.ResponseDTO;
 
 public interface UserService {
     ResponseDTO createUser(String user, String password);
-    static ResponseDTO login(String user, String password);
+
+    static ResponseDTO login(String user, String password) {
+        return null;
+    }
 }

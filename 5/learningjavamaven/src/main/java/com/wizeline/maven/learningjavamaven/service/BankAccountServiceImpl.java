@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.CriteriaDefinition;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
+import javax.xml.stream.events.Comment;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -76,5 +78,11 @@ public class BankAccountServiceImpl implements BankAccountService {
         Query query = new Query();
         query.addCriteria((CriteriaDefinition) Criteria.where("userName").is(user));
         return mongoTemplate.find(query, BankAccountDTO.class);
+    }
+    @Override
+    public List<BankAccountDTO> updateAccountByUser(String user) {
+        Query query = new Query();
+        query.addCriteria((CriteriaDefinition) Criteria.where("userName").is(user));
+        return (List<BankAccountDTO>) mongoTemplate.updateFirst(query, Update.update("message", "This comment updated by updateFirst methods"), Comment.class);
     }
 }

@@ -48,7 +48,7 @@ public class BankingAccountController {
 
 
     @GetMapping("/getExternalUser/{userId}")
-    public ResponseEntity<Post> getExternalUser(@PathVariable Long userId) {
+    public ResponseEntity<String> getExternalUser(@PathVariable Long userId) {
 
         AccountsJSONClient accountsJSONClient = null;
         Post postTest = accountsJSONClient.getPostById(userId);
@@ -63,7 +63,7 @@ public class BankingAccountController {
         LOGGER.info("Setting post title...."+postTest.getTitle());
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("Content-Type", "application/json; charset=UTF-8");
-        return new ResponseEntity<>(postTest, responseHeaders, HttpStatus.OK);
+        return new ResponseEntity<String>(String.valueOf(postTest), responseHeaders, HttpStatus.OK);
     }
 
 }
